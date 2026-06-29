@@ -9,7 +9,7 @@ export const profile = {
   location: "Istanbul, Türkiye",
   email: "altay.topaloglu@metu.edu.tr",
   phone: "+90 532 612 3601",
-  cv: "/Onur-Altay-Topaloglu-CV.pdf",
+  cv: "/Resume.pdf",
   socials: {
     github: "https://github.com/OnurAltayTopaloglu",
     linkedin: "https://www.linkedin.com/in/onur-altay-topaloglu/",
