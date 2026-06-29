@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+/* Class-based dark mode: `dark:` utilities apply when <html> (or an ancestor)
+   has the `dark` class. The theme is toggled by adding/removing that class. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Base tokens = LIGHT theme (cool white + deep teal, unified with dark cyan).
+   Dark theme overrides these under the `.dark` class below. */
+@theme {
+  --color-bg: #f8fafc;
+  --color-bg-soft: #eef2f6;
+  --color-surface: #ffffff;
+  --color-border: #e2e8f0;
+  --color-muted: #64748b;
+  --color-text: #334155;
+  --color-heading: #0f172a;
+  --color-accent: #0e7490;
+  --color-accent-soft: #0891b2;
+  --color-accent-deep: #155e75;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, monospace;
+}
+
+/* DARK theme overrides */
+.dark {
+  --color-bg: #0a0e14;
+  --color-bg-soft: #0f141d;
+  --color-surface: #131a24;
+  --color-border: #1f2937;
+  --color-muted: #94a3b8;
+  --color-text: #e2e8f0;
+  --color-heading: #f8fafc;
+  --color-accent: #22d3ee;
+  --color-accent-soft: #67e8f9;
+  --color-accent-deep: #0891b2;
+}
+
+:root {
+  color-scheme: light;
+}
+.dark {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Ambient gradient glow behind hero (adapts to the active accent) */
+.hero-glow {
+  background:
+    radial-gradient(
+      60% 50% at 20% 0%,
+      color-mix(in srgb, var(--color-accent) 14%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      50% 50% at 90% 10%,
+      color-mix(in srgb, var(--color-accent-deep) 12%, transparent),
+      transparent 70%
+    );
+}
+
+/* Subtle dotted grid background */
+.grid-bg {
+  background-image: radial-gradient(
+    color-mix(in srgb, var(--color-muted) 22%, transparent) 1px,
+    transparent 1px
+  );
+  background-size: 28px 28px;
+  -webkit-mask-image: linear-gradient(to bottom, black, transparent 90%);
+  mask-image: linear-gradient(to bottom, black, transparent 90%);
+}
+
+/* Scroll-reveal animation */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Content stays visible if JS is disabled; only hide when JS is active (html.js). */
+html.js .reveal {
+  opacity: 0;
+}
+
+html.js .reveal.is-visible {
+  animation: reveal-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  html.js .reveal,
+  html.js .reveal.is-visible {
+    opacity: 1;
+    animation: none;
+  }
+}
+
+/* Random glow for highlighted percentages (accent-aware) */
+.pct-glow {
+  text-shadow:
+    0 0 8px var(--color-accent),
+    0 0 18px color-mix(in srgb, var(--color-accent) 55%, transparent);
+}
+
+/* Gradient text for accents */
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-accent-soft), var(--color-accent-deep));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-muted);
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-accent) 25%, transparent);
+  color: var(--color-heading);
+}
