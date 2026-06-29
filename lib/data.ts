@@ -283,7 +283,7 @@ export const educationTimeline: EduNode[] = [
     school: "Kadıköy Anatolian High School (Kadıköy Maarif College)",
     degree: "High School Diploma (STEM)",
     period: "2016 – 2021",
-    logo: "/logos/kadıkoy_logo.jpeg",
+    logo: "/logos/kadikoy_logo.jpeg",
     url: "https://en.wikipedia.org/wiki/Kad%C4%B1k%C3%B6y_Anatolian_High_School",
   },
   {
