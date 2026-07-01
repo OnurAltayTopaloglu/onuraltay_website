@@ -1,7 +1,12 @@
+"use client";
+
 import { ArrowDown, Download, Github, Linkedin, Mail, MapPin, GraduationCap } from "lucide-react";
 import { profile } from "@/lib/data";
+import { useLang, useUi, pick } from "@/lib/i18n";
 
 export default function Hero() {
+  const { lang } = useLang();
+  const t = useUi();
   return (
     <section id="top" className="relative overflow-hidden">
       <div className="hero-glow absolute inset-0 -z-10" />
@@ -13,7 +18,7 @@ export default function Hero() {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
           </span>
-          Open to ML / AI Engineering roles
+          {t.hero.openTo}
         </p>
 
         <h1 className="max-w-3xl text-4xl font-bold leading-[1.1] tracking-tight text-heading sm:text-5xl md:text-6xl">
@@ -21,19 +26,20 @@ export default function Hero() {
         </h1>
 
         <p className="mt-4 text-lg font-medium text-accent-soft sm:text-xl">
-          {profile.title}
+          {pick(lang, profile.title, profile.titleTr)}
         </p>
 
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
-          {profile.tagline}
+          {pick(lang, profile.tagline, profile.taglineTr)}
         </p>
 
         <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted">
           <span className="inline-flex items-center gap-2">
-            <MapPin size={15} className="text-accent" /> {profile.location}
+            <MapPin size={15} className="text-accent" />{" "}
+            {pick(lang, profile.location, profile.locationTr)}
           </span>
           <span className="inline-flex items-center gap-2">
-            <GraduationCap size={15} className="text-accent" /> M.E.T.U. — Computer Engineering
+            <GraduationCap size={15} className="text-accent" /> {t.hero.metu}
           </span>
         </div>
 
@@ -42,7 +48,7 @@ export default function Hero() {
             href="#contact"
             className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-bg transition-transform hover:scale-[1.03]"
           >
-            <Mail size={16} /> Get in touch
+            <Mail size={16} /> {t.hero.getInTouch}
           </a>
           <a
             href={profile.cv}
@@ -50,7 +56,7 @@ export default function Hero() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-5 py-2.5 text-sm font-semibold text-text transition-colors hover:border-accent/50 hover:text-heading"
           >
-            <Download size={16} /> Download CV
+            <Download size={16} /> {t.hero.downloadCv}
           </a>
 
           <div className="ml-1 flex items-center gap-1">

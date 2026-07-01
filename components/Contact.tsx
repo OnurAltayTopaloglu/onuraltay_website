@@ -1,21 +1,23 @@
+"use client";
+
 import { Mail, Github, Linkedin, GraduationCap, Download, ArrowUpRight } from "lucide-react";
 import Reveal from "./Reveal";
 import { profile } from "@/lib/data";
+import { useUi } from "@/lib/i18n";
 
 export default function Contact() {
+  const t = useUi();
   return (
     <section id="contact" className="mx-auto max-w-4xl px-6 py-20 sm:py-28">
       <Reveal className="relative overflow-hidden rounded-3xl border border-border bg-surface/40 px-6 py-14 text-center sm:px-12">
         <div className="hero-glow absolute inset-0 -z-10 opacity-70" />
 
-        <p className="font-mono text-sm text-accent">06. What's next?</p>
+        <p className="font-mono text-sm text-accent">06. {t.contact.whatsNext}</p>
         <h2 className="mt-3 text-3xl font-bold tracking-tight text-heading sm:text-4xl">
-          Let's build something together
+          {t.contact.heading}
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted">
-          I'm currently open to machine learning and AI engineering opportunities.
-          Whether you have a role, a project or business idea, or just want to
-          talk shop — my inbox is always open.
+          {t.contact.body}
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
@@ -23,7 +25,7 @@ export default function Contact() {
             href={`mailto:${profile.email}`}
             className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-bg transition-transform hover:scale-[1.03]"
           >
-            <Mail size={16} /> Say hello
+            <Mail size={16} /> {t.contact.sayHello}
           </a>
           <a
             href={profile.cv}
@@ -31,7 +33,7 @@ export default function Contact() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full border border-border bg-bg/50 px-6 py-3 text-sm font-semibold text-text transition-colors hover:border-accent/50 hover:text-heading"
           >
-            <Download size={16} /> Download CV
+            <Download size={16} /> {t.contact.downloadCv}
           </a>
         </div>
 

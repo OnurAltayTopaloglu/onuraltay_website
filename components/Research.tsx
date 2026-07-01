@@ -1,7 +1,10 @@
+"use client";
+
 import { ExternalLink, FileText, BookOpen, Building2 } from "lucide-react";
 import Section from "./Section";
 import Reveal from "./Reveal";
 import { publications } from "@/lib/data";
+import { useLang, useUi, pick } from "@/lib/i18n";
 
 const badgeStyles: Record<string, string> = {
   venue: "bg-accent/10 text-accent-soft",
@@ -11,8 +14,10 @@ const badgeStyles: Record<string, string> = {
 };
 
 export default function Research() {
+  const { lang } = useLang();
+  const t = useUi();
   return (
-    <Section id="research" index="02" title="Research & Publications">
+    <Section id="research" index="02" title={t.sections.research}>
       <div className="space-y-6">
         {publications.map((pub, i) => (
           <Reveal key={pub.title} delay={i * 100}>
@@ -27,7 +32,7 @@ export default function Research() {
                   >
                     {badge.variant === "venue" && <BookOpen size={12} />}
                     {badge.variant === "org" && <Building2 size={12} />}
-                    {badge.label}
+                    {pick(lang, badge.label, badge.labelTr)}
                   </span>
                 ))}
               </div>
@@ -37,7 +42,7 @@ export default function Research() {
               </h3>
 
               <p className="mt-3 text-sm leading-relaxed text-muted">
-                {pub.description}
+                {pick(lang, pub.description, pub.descriptionTr)}
               </p>
 
               {pub.links.length > 0 && (

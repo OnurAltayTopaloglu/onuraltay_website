@@ -1,11 +1,16 @@
+"use client";
+
 import { ArrowUpRight, FolderGit2, Lock } from "lucide-react";
 import Section from "./Section";
 import Reveal from "./Reveal";
 import { projects } from "@/lib/data";
+import { useLang, useUi, pick } from "@/lib/i18n";
 
 export default function Projects() {
+  const { lang } = useLang();
+  const t = useUi();
   return (
-    <Section id="projects" index="04" title="Projects">
+    <Section id="projects" index="04" title={t.sections.projects}>
       <div className="grid gap-6 sm:grid-cols-2">
         {projects.map((project, i) => (
           <Reveal key={project.title} delay={i * 100}>
@@ -16,7 +21,7 @@ export default function Projects() {
                 </span>
                 {project.status ? (
                   <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/30 bg-accent/5 px-3 py-1 font-mono text-[11px] text-accent-soft">
-                    <Lock size={11} /> {project.status}
+                    <Lock size={11} /> {pick(lang, project.status, project.statusTr)}
                   </span>
                 ) : (
                   project.links[0] && (
@@ -35,13 +40,13 @@ export default function Projects() {
 
               <h3 className="text-lg font-semibold text-heading">{project.title}</h3>
               <p className="mt-1 text-xs font-medium text-accent-soft">
-                {project.subtitle}
+                {pick(lang, project.subtitle, project.subtitleTr)}
               </p>
               <p className="mt-1 font-mono text-xs text-muted/70">
                 {project.period}
               </p>
               <p className="mt-3 text-sm leading-relaxed text-muted">
-                {project.description}
+                {pick(lang, project.description, project.descriptionTr)}
               </p>
 
               {project.video && (

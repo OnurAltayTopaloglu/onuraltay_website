@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { athletics } from "@/lib/data";
+import { useUi } from "@/lib/i18n";
 
 export default function AthleticsPlayground() {
   return (
@@ -57,35 +58,36 @@ function MuscleUp({ max }: { max: number }) {
     }
   };
 
+  const p = useUi().play;
   const over = reps - max; // reps past my PR
   const label =
     reps === 0
-      ? "tap to beat me"
+      ? p.tapToBeat
       : over >= 5
       ? `${reps} · 💀🙏`
       : over === 4
-      ? `${reps} · please, stop 😰`
+      ? `${reps} · ${p.over4}`
       : over === 3
-      ? `${reps} · that's not human 😳`
+      ? `${reps} · ${p.over3}`
       : over === 2
-      ? `${reps} · okay, showoff 😅`
+      ? `${reps} · ${p.over2}`
       : over === 1
-      ? `${reps} · you beat me! 🎉`
+      ? `${reps} · ${p.over1}`
       : over === 0
-      ? `PR! ${max} muscle-ups 💪`
+      ? p.pr(max)
       : reps <= 5
-      ? `${reps} · not even close…`
+      ? `${reps} · ${p.notClose}`
       : reps <= 10
-      ? `${reps} · getting there…`
-      : `${reps} · so close…`;
+      ? `${reps} · ${p.gettingThere}`
+      : `${reps} · ${p.soClose}`;
 
   return (
     <div className="flex flex-col items-center rounded-xl border border-border bg-bg/40 p-3">
       <span className="rounded bg-surface px-1.5 py-0.5 font-mono text-[10px] uppercase tracking-wider text-accent-soft">
-        Calisthenics
+        {p.calisthenics}
       </span>
       <span className="mb-1 mt-0.5 font-mono text-[10px] text-muted">
-        my muscle-up best: {reps >= max ? max : "?"}
+        {p.muscleBest} {reps >= max ? max : "?"}
       </span>
       <button
         type="button"
@@ -204,29 +206,30 @@ function Runner({ pb }: { pb: number }) {
     setEffort(effortRef.current);
   };
 
+  const p = useUi().play;
   const racing = phase === "racing";
   const bolt = phase === "done" && elapsed <= BOLT;
   const won = phase === "done" && elapsed < pb;
   const caption =
     phase === "idle"
-      ? "mash to sprint 100m →"
+      ? p.mash
       : phase === "racing"
       ? `${elapsed.toFixed(2)}s`
       : bolt
-      ? `${elapsed.toFixed(2)}s · Usain Bolt?! 🐆`
+      ? `${elapsed.toFixed(2)}s · ${p.bolt}`
       : won
-      ? `${elapsed.toFixed(2)}s · you beat me! 🎉`
+      ? `${elapsed.toFixed(2)}s · ${p.raceWon}`
       : elapsed < pb + 1.5
-      ? `${elapsed.toFixed(2)}s · so close!`
-      : `${elapsed.toFixed(2)}s · I'm still faster 😄`;
+      ? `${elapsed.toFixed(2)}s · ${p.raceClose}`
+      : `${elapsed.toFixed(2)}s · ${p.raceLost}`;
 
   return (
     <div className="flex flex-col items-center rounded-xl border border-border bg-bg/40 p-3">
       <span className="rounded bg-surface px-1.5 py-0.5 font-mono text-[10px] uppercase tracking-wider text-accent-soft">
-        Running
+        {p.running}
       </span>
       <span className="mb-1 mt-0.5 font-mono text-[10px] text-muted">
-        my 100m: {revealed ? `${pb.toFixed(2)}s` : "? sec"}
+        {p.sprintBest} {revealed ? `${pb.toFixed(2)}s` : `? ${p.sec}`}
       </span>
 
       <div className="flex items-stretch gap-2">

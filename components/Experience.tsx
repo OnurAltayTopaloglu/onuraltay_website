@@ -1,11 +1,16 @@
+"use client";
+
 import Image from "next/image";
 import Section from "./Section";
 import Reveal from "./Reveal";
 import { experiences } from "@/lib/data";
+import { useLang, useUi, pick } from "@/lib/i18n";
 
 export default function Experience() {
+  const { lang } = useLang();
+  const t = useUi();
   return (
-    <Section id="experience" index="03" title="Experience">
+    <Section id="experience" index="03" title={t.sections.experience}>
       <div className="space-y-10">
         {experiences.map((exp, i) => (
           <Reveal key={exp.org + exp.period} delay={i * 80}>
@@ -13,7 +18,9 @@ export default function Experience() {
               {/* Left column: date + location */}
               <div className="sm:pt-1 sm:text-right">
                 <p className="font-mono text-xs text-accent-soft">{exp.period}</p>
-                <p className="mt-1 text-xs text-muted/70">{exp.location}</p>
+                <p className="mt-1 text-xs text-muted/70">
+                  {pick(lang, exp.location, exp.locationTr)}
+                </p>
               </div>
 
               {/* Right column: details with timeline rail */}
@@ -43,7 +50,7 @@ export default function Experience() {
                 {/* Header: right padding reserves space for the logo */}
                 <div className="pr-44">
                   <h3 className="text-lg font-semibold text-heading sm:text-xl">
-                    {exp.role}
+                    {pick(lang, exp.role, exp.roleTr)}
                   </h3>
                   <p className="mt-0.5 text-sm font-medium text-accent-soft">
                     {exp.orgUrl ? (
@@ -63,7 +70,9 @@ export default function Experience() {
 
                 {exp.advisors && exp.advisors.length > 0 && (
                   <p className="mt-1 text-xs italic text-muted/80">
-                    {exp.advisors.length > 1 ? "Advisors: " : "Advisor: "}
+                    {(exp.advisors.length > 1
+                      ? t.experience.advisors
+                      : t.experience.advisor) + ": "}
                     {exp.advisors.map((advisor, k) => (
                       <span key={advisor.name}>
                         {advisor.url ? (
@@ -85,14 +94,16 @@ export default function Experience() {
                 )}
 
                 <ul className="mt-3 space-y-2">
-                  {exp.points.map((point, j) => (
-                    <li
-                      key={j}
-                      className="relative pl-5 text-sm leading-relaxed text-muted before:absolute before:left-0 before:top-2 before:h-1.5 before:w-1.5 before:rounded-full before:bg-accent/50"
-                    >
-                      {point}
-                    </li>
-                  ))}
+                  {(lang === "tr" && exp.pointsTr ? exp.pointsTr : exp.points).map(
+                    (point, j) => (
+                      <li
+                        key={j}
+                        className="relative pl-5 text-sm leading-relaxed text-muted before:absolute before:left-0 before:top-2 before:h-1.5 before:w-1.5 before:rounded-full before:bg-accent/50"
+                      >
+                        {point}
+                      </li>
+                    )
+                  )}
                 </ul>
               </div>
             </div>

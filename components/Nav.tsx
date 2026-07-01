@@ -3,9 +3,12 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { navLinks, profile } from "@/lib/data";
+import { useUi } from "@/lib/i18n";
 import ThemeToggle from "./ThemeToggle";
+import LanguageToggle from "./LanguageToggle";
 
 export default function Nav() {
+  const t = useUi();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -39,7 +42,7 @@ export default function Nav() {
                 href={link.href}
                 className="text-sm text-muted transition-colors hover:text-heading"
               >
-                {link.label}
+                {t.nav[link.key]}
               </a>
             </li>
           ))}
@@ -50,8 +53,11 @@ export default function Nav() {
               rel="noopener noreferrer"
               className="rounded-full border border-accent/40 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent-soft transition-colors hover:bg-accent/20"
             >
-              Résumé
+              {t.nav.resume}
             </a>
+          </li>
+          <li>
+            <LanguageToggle />
           </li>
           <li>
             <ThemeToggle />
@@ -59,6 +65,7 @@ export default function Nav() {
         </ul>
 
         <div className="flex items-center gap-1 md:hidden">
+          <LanguageToggle />
           <ThemeToggle />
           <button
             aria-label="Toggle menu"
@@ -80,7 +87,7 @@ export default function Nav() {
                   onClick={() => setOpen(false)}
                   className="block py-2.5 text-sm text-muted transition-colors hover:text-heading"
                 >
-                  {link.label}
+                  {t.nav[link.key]}
                 </a>
               </li>
             ))}
@@ -92,7 +99,7 @@ export default function Nav() {
                 onClick={() => setOpen(false)}
                 className="mt-2 inline-block rounded-full border border-accent/40 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent-soft"
               >
-                Download Résumé
+                {t.nav.resume}
               </a>
             </li>
           </ul>
