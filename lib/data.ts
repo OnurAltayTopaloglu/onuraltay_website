@@ -7,7 +7,7 @@ export const profile = {
   tagline:
     "Computer Engineering graduate from METU building trustworthy, multimodal AI systems — from medical vision-language models to large-scale computer vision research.",
   location: "Istanbul, Türkiye",
-  email: "altay.topaloglu@metu.edu.tr",
+  email: "hello@onuraltay.dev",
   phone: "+90 532 612 3601",
   cv: "/Resume.pdf",
   socials: {
