@@ -246,6 +246,29 @@ export const projects: Project[] = [
   // },
 ];
 
+export const athletics = {
+  intro:
+    "Away from the screen, I train seriously in calisthenics and strength sports — six years in the gym, and a competitive streak that follows me onto campus.",
+  achievements: [
+    {
+      place: "2× Runner-up",
+      title: "En Fit ODTÜlü (2024 & 2026)",
+      detail:
+        "METU's campus-wide fitness competition — calisthenics (pull-ups, push-ups, crunches) combined with track events (100m / 400m / 1500m).",
+      url: "https://genclikoyunlari.metu.edu.tr/tr/enfitodtulu",
+    },
+    {
+      place: "4th nationally",
+      title: "Inter-University Calisthenics Competition",
+      detail: "Calisthenics competition among universities across Türkiye.",
+      url: "https://genclikoyunlari.metu.edu.tr/tr",
+    },
+  ],
+  disciplines: ["Calisthenics", "Powerbuilding", "Running", "Boxing"],
+  trackEvents: ["100m", "400m", "1500m"],
+  muscleUpMax: 15, // real PR — the tap-to-rep figure celebrates when you reach it
+};
+
 // Education as a vertical timeline (top → bottom): schools use their logo as the
 // marker, exams are dot milestones. Kadıköy sits between its two exam bookends.
 export type EduNode =
@@ -311,5 +334,6 @@ export const navLinks = [
   { label: "Research", href: "#research" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
+  { label: "Beyond", href: "#beyond" },
   { label: "Contact", href: "#contact" },
 ];

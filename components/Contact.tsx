@@ -8,7 +8,7 @@ export default function Contact() {
       <Reveal className="relative overflow-hidden rounded-3xl border border-border bg-surface/40 px-6 py-14 text-center sm:px-12">
         <div className="hero-glow absolute inset-0 -z-10 opacity-70" />
 
-        <p className="font-mono text-sm text-accent">05. What's next?</p>
+        <p className="font-mono text-sm text-accent">06. What's next?</p>
         <h2 className="mt-3 text-3xl font-bold tracking-tight text-heading sm:text-4xl">
           Let's build something together
         </h2>
