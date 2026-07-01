@@ -40,9 +40,24 @@ export default function Projects() {
               <p className="mt-1 font-mono text-xs text-muted/70">
                 {project.period}
               </p>
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
+              <p className="mt-3 text-sm leading-relaxed text-muted">
                 {project.description}
               </p>
+
+              {project.video && (
+                <div className="mt-4 aspect-video overflow-hidden rounded-lg border border-border">
+                  <iframe
+                    src={`https://www.youtube-nocookie.com/embed/${project.video}`}
+                    title={`${project.title} demo video`}
+                    className="h-full w-full"
+                    loading="lazy"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              )}
+
+              <div className="flex-1" />
 
               <div className="mt-5 flex flex-wrap gap-2">
                 {project.tags.map((tag) => (

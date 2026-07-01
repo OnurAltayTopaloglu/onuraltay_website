@@ -206,6 +206,7 @@ export type Project = {
   description: string;
   tags: string[];
   links: { label: string; url: string }[];
+  video?: string; // YouTube video ID for an embedded demo
   status?: string;
   featured?: boolean;
 };
@@ -232,6 +233,7 @@ export const projects: Project[] = [
     links: [
       { label: "Website", url: "https://senior.ceng.metu.edu.tr/2026/CandC/" },
     ],
+    video: "_GyfF4FKdns",
     featured: true,
   },
   // TODO: Add your second project here, following the same shape.
