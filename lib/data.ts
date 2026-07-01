@@ -252,21 +252,22 @@ export const athletics = {
   achievements: [
     {
       place: "2× Runner-up",
-      title: "En Fit ODTÜlü (2024 & 2026)",
+      title: "En Fit ODTÜlü / The Fittest METU Student (2024 & 2026)",
       detail:
         "METU's campus-wide fitness competition — calisthenics (pull-ups, push-ups, crunches) combined with track events (100m / 400m / 1500m).",
       url: "https://genclikoyunlari.metu.edu.tr/tr/enfitodtulu",
     },
     {
       place: "4th nationally",
-      title: "Inter-University Calisthenics Competition",
+      title: "Inter-University Calisthenics Competition (2026)",
       detail: "Calisthenics competition among universities across Türkiye.",
-      url: "https://genclikoyunlari.metu.edu.tr/tr",
+      url: "https://genclikoyunlari.metu.edu.tr/tr/kalisteniks",
     },
   ],
-  disciplines: ["Calisthenics", "Powerbuilding", "Running", "Boxing"],
+  disciplines: ["Calisthenics", "Running", "Boxing", "Powerbuilding"],
   trackEvents: ["100m", "400m", "1500m"],
   muscleUpMax: 15, // real PR — the tap-to-rep figure celebrates when you reach it
+  sprintPb: 12.73, // real 100m PR (s) — the mash-to-sprint game races against it
 };
 
 // Education as a vertical timeline (top → bottom): schools use their logo as the
