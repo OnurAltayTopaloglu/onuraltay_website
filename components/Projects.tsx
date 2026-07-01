@@ -37,6 +37,9 @@ export default function Projects() {
               <p className="mt-1 text-xs font-medium text-accent-soft">
                 {project.subtitle}
               </p>
+              <p className="mt-1 font-mono text-xs text-muted/70">
+                {project.period}
+              </p>
               <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
                 {project.description}
               </p>

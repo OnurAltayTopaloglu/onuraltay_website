@@ -202,6 +202,7 @@ export const experiences: Experience[] = [
 export type Project = {
   title: string;
   subtitle: string;
+  period: string;
   description: string;
   tags: string[];
   links: { label: string; url: string }[];
@@ -213,6 +214,7 @@ export const projects: Project[] = [
   {
     title: "ÜSTAT",
     subtitle: "AI-native workspace for lawyers",
+    period: "Feb 2026 – Present",
     description:
       "From filing a case to the appeal deadline, ÜSTAT brings a lawyer's entire day into a single workspace — cases, clients, documents, and deadline tracking, all in one source of truth, paired with a document-aware AI assistant that understands the files it works with.",
     tags: ["Legal Tech", "AI Assistant", "RAG", "Document Intelligence"],
@@ -223,8 +225,9 @@ export const projects: Project[] = [
   {
     title: "Capture & Cook",
     subtitle: "Fridge photo → recipe suggestions · Senior Design Project",
+    period: "Sep 2025 – Jun 2026",
     description:
-      "An app that turns a photo of your fridge into recipe suggestions. Built a search engine ranking recipes by fusing TF-IDF with dense semantic vector search using FAISS, optimized rankings via a custom cross-scoring algorithm trained on a human-preference dataset, and integrated the Alibaba Qwen VLM for automated ingredient detection.",
+      "An app that turns a photo of your fridge into recipe suggestions — it detects the ingredients you have from a single photo, then finds and ranks the recipes you can cook with them.",
     tags: ["FAISS", "TF-IDF", "Semantic Search", "VLM", "Python"],
     links: [
       { label: "Website", url: "https://senior.ceng.metu.edu.tr/2026/CandC/" },
