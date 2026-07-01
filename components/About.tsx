@@ -78,11 +78,12 @@ export default function About() {
                       </p>
                     </div>
                   ) : (
-                    <div key={idx} className="relative flex gap-2 pl-14">
-                      {/* exam dot on the rail */}
-                      <span className="absolute left-[15px] top-1.5 h-2.5 w-2.5 rounded-full bg-accent ring-4 ring-bg" />
-                      <span className="shrink-0 pt-px font-mono text-xs text-accent-soft">
-                        {node.year}
+                    <div key={idx} className="relative pl-14">
+                      {/* year sits on the rail as the marker (no dot) */}
+                      <span className="absolute left-0 top-0.5 w-10 text-center">
+                        <span className="bg-bg px-1 font-mono text-xs font-semibold text-accent-soft">
+                          {node.year}
+                        </span>
                       </span>
                       <div>
                         <p className="text-sm text-muted">{node.name}</p>
