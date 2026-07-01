@@ -37,7 +37,10 @@ export default function BeyondScreen() {
                 <div className="min-w-0">
                   <p className="text-sm font-semibold text-heading">
                     {pick(lang, a.place, a.placeTr)}
-                    <span className="font-normal text-accent-soft"> · {a.title}</span>
+                    <span className="font-normal text-accent-soft">
+                      {" · "}
+                      {pick(lang, a.title, a.titleTr)}
+                    </span>
                     <ArrowUpRight
                       size={13}
                       className="ml-0.5 inline opacity-50 transition-opacity group-hover:opacity-100"

@@ -306,6 +306,7 @@ export const athletics = {
       place: "2× Runner-up",
       placeTr: "2× İkincilik",
       title: "En Fit ODTÜlü / The Fittest METU Student (2024 & 2026)",
+      titleTr: "En Fit ODTÜlü (2024 & 2026)",
       detail:
         "METU's campus-wide fitness competition — calisthenics (pull-ups, push-ups, crunches) combined with track events (100m / 400m / 1500m).",
       detailTr:
@@ -315,9 +316,12 @@ export const athletics = {
     {
       place: "4th nationally",
       placeTr: "Türkiye 4.'sü",
-      title: "Inter-University Calisthenics Competition (2026)",
-      detail: "Calisthenics competition among universities across Türkiye.",
-      detailTr: "Türkiye genelindeki üniversiteler arası kalistenik yarışması.",
+      title: "Calisthenics Competition – METU Youth Games (2026)",
+      titleTr: "Kalistenik Müsabakası – ODTÜ Gençlik Oyunları (2026)",
+      detail:
+        "Inter-university calisthenics competition organized by METU Youth Games.",
+      detailTr:
+        "ODTÜ Gençlik Oyunları tarafından düzenlenen üniversiteler arası kalistenik yarışması.",
       url: "https://genclikoyunlari.metu.edu.tr/tr/kalisteniks",
     },
   ],
