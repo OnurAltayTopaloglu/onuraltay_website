@@ -314,8 +314,8 @@ export const athletics = {
       url: "https://genclikoyunlari.metu.edu.tr/tr/enfitodtulu",
     },
     {
-      place: "4th nationally",
-      placeTr: "Türkiye 4.'sü",
+      place: "4th place",
+      placeTr: "4.'lük",
       title: "Calisthenics Competition – METU Youth Games (2026)",
       titleTr: "Kalistenik Müsabakası – ODTÜ Gençlik Oyunları (2026)",
       detail:
