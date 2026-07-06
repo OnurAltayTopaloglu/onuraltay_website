@@ -17,7 +17,6 @@ export const profile = {
   locationTr: "İstanbul, Türkiye",
   locationDe: "Istanbul, Türkei",
   email: "hello@onuraltay.dev",
-  phone: "+90 532 612 3601",
   cv: "/Resume.pdf",
   socials: {
     github: "https://github.com/OnurAltayTopaloglu",
