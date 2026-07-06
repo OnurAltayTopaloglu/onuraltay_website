@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useEffect, useState } from "react";
 
-export type Lang = "en" | "tr";
+export type Lang = "en" | "tr" | "de";
 
 const LangContext = createContext<{ lang: Lang; setLang: (l: Lang) => void }>({
   lang: "en",
@@ -16,7 +16,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     try {
       const saved = localStorage.getItem("lang");
-      if (saved === "tr" || saved === "en") setLangState(saved);
+      if (saved === "tr" || saved === "en" || saved === "de") setLangState(saved);
     } catch {
       /* ignore */
     }
@@ -44,9 +44,16 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
 export const useLang = () => useContext(LangContext);
 
-/** Pick the Turkish string when in TR mode and it exists, else the English one. */
-export const pick = (lang: Lang, en: string, tr?: string) =>
-  lang === "tr" && tr ? tr : en;
+/** Pick the variant for the active language, falling back to English. */
+export const pick = (lang: Lang, en: string, tr?: string, de?: string) =>
+  lang === "de" && de ? de : lang === "tr" && tr ? tr : en;
+
+/** Same as `pick`, for arrays (e.g. paragraphs, bullet points). */
+export function pickArr<T>(lang: Lang, en: T, tr?: T, de?: T): T {
+  if (lang === "de" && de) return de;
+  if (lang === "tr" && tr) return tr;
+  return en;
+}
 
 /** UI-chrome strings (labels, headings, buttons, game copy). */
 export const ui = {
@@ -156,6 +163,60 @@ export const ui = {
       raceWon: "beni geçtin! 🎉",
       raceClose: "çok az kaldı!",
       raceLost: "yine de ben daha hızlıyım 😄",
+    },
+  },
+  de: {
+    nav: {
+      about: "Über mich",
+      research: "Forschung",
+      experience: "Erfahrung",
+      projects: "Projekte",
+      beyond: "Mehr",
+      contact: "Kontakt",
+      resume: "Lebenslauf",
+    },
+    hero: {
+      openTo: "Offen für ML / KI-Engineering-Stellen",
+      metu: "M.E.T.U. — Technische Informatik",
+      getInTouch: "Kontakt aufnehmen",
+      downloadCv: "Lebenslauf herunterladen",
+    },
+    sections: {
+      about: "Über mich",
+      research: "Forschung & Publikationen",
+      experience: "Erfahrung",
+      projects: "Projekte",
+      beyond: "Abseits des Bildschirms",
+    },
+    about: { education: "Ausbildung" },
+    experience: { advisor: "Betreuer", advisors: "Betreuer" },
+    contact: {
+      whatsNext: "Was kommt als Nächstes?",
+      heading: "Lass uns gemeinsam etwas aufbauen",
+      body: "Ich bin derzeit offen für Möglichkeiten im Bereich Machine Learning und KI-Engineering. Ob Sie eine Stelle, eine Projekt- oder Geschäftsidee haben oder einfach fachsimpeln möchten — mein Postfach ist immer offen.",
+      sayHello: "Hallo sagen",
+      downloadCv: "Lebenslauf herunterladen",
+    },
+    play: {
+      calisthenics: "Calisthenics",
+      running: "Laufen",
+      muscleBest: "mein Muscle-up-Rekord:",
+      sprintBest: "meine 100m:",
+      sec: "Sek.",
+      tapToBeat: "schlag mich, tippe",
+      notClose: "nicht mal ansatzweise…",
+      gettingThere: "wird langsam…",
+      soClose: "fast geschafft…",
+      pr: (n: number) => `Rekord! ${n} Muscle-ups 💪`,
+      over1: "du hast mich geschlagen! 🎉",
+      over2: "okay, Angeber 😅",
+      over3: "das ist nicht menschlich 😳",
+      over4: "bitte, hör auf 😰",
+      mash: "hämmern für den 100m-Sprint →",
+      bolt: "Usain Bolt?! 🐆",
+      raceWon: "du hast mich geschlagen! 🎉",
+      raceClose: "so knapp!",
+      raceLost: "ich bin trotzdem schneller 😄",
     },
   },
 };

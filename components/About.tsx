@@ -5,12 +5,17 @@ import Section from "./Section";
 import Reveal from "./Reveal";
 import GlowPercent from "./GlowPercent";
 import { about, educationTimeline, profile } from "@/lib/data";
-import { useLang, useUi, pick } from "@/lib/i18n";
+import { useLang, useUi, pick, pickArr } from "@/lib/i18n";
 
 export default function About() {
   const { lang } = useLang();
   const t = useUi();
-  const paragraphs = lang === "tr" ? about.paragraphsTr : about.paragraphs;
+  const paragraphs = pickArr(
+    lang,
+    about.paragraphs,
+    about.paragraphsTr,
+    about.paragraphsDe
+  );
   return (
     <Section id="about" index="01" title={t.sections.about}>
       <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr]">
@@ -69,18 +74,18 @@ export default function About() {
                             rel="noopener noreferrer"
                             className="underline decoration-transparent underline-offset-2 transition-colors hover:decoration-accent-soft"
                           >
-                            {pick(lang, node.school, node.schoolTr)}
+                            {pick(lang, node.school, node.schoolTr, node.schoolDe)}
                           </a>
                         ) : (
-                          pick(lang, node.school, node.schoolTr)
+                          pick(lang, node.school, node.schoolTr, node.schoolDe)
                         )}
                       </p>
                       <p className="text-sm text-muted">
-                        {pick(lang, node.degree, node.degreeTr)}
+                        {pick(lang, node.degree, node.degreeTr, node.degreeDe)}
                       </p>
                       {node.note && (
                         <p className="text-sm text-accent-soft">
-                          {pick(lang, node.note, node.noteTr)}
+                          {pick(lang, node.note, node.noteTr, node.noteDe)}
                         </p>
                       )}
                       <p className="mt-1 font-mono text-xs text-muted/70">
@@ -97,13 +102,13 @@ export default function About() {
                       </span>
                       <div>
                         <p className="text-sm text-muted">
-                          {pick(lang, node.name, node.nameTr)}
+                          {pick(lang, node.name, node.nameTr, node.nameDe)}
                         </p>
                         <p className="text-sm text-muted">
-                          {pick(lang, "top", "ilk")}{" "}
+                          {pick(lang, "top", "ilk", "Top")}{" "}
                           <GlowPercent>{node.percent}</GlowPercent>
                           {node.suffix
-                            ? ` ${pick(lang, node.suffix, node.suffixTr)}`
+                            ? ` ${pick(lang, node.suffix, node.suffixTr, node.suffixDe)}`
                             : ""}
                         </p>
                       </div>

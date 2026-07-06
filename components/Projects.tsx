@@ -21,7 +21,8 @@ export default function Projects() {
                 </span>
                 {project.status ? (
                   <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/30 bg-accent/5 px-3 py-1 font-mono text-[11px] text-accent-soft">
-                    <Lock size={11} /> {pick(lang, project.status, project.statusTr)}
+                    <Lock size={11} />{" "}
+                    {pick(lang, project.status, project.statusTr, project.statusDe)}
                   </span>
                 ) : (
                   project.links[0] && (
@@ -40,13 +41,13 @@ export default function Projects() {
 
               <h3 className="text-lg font-semibold text-heading">{project.title}</h3>
               <p className="mt-1 text-xs font-medium text-accent-soft">
-                {pick(lang, project.subtitle, project.subtitleTr)}
+                {pick(lang, project.subtitle, project.subtitleTr, project.subtitleDe)}
               </p>
               <p className="mt-1 font-mono text-xs text-muted/70">
                 {project.period}
               </p>
               <p className="mt-3 text-sm leading-relaxed text-muted">
-                {pick(lang, project.description, project.descriptionTr)}
+                {pick(lang, project.description, project.descriptionTr, project.descriptionDe)}
               </p>
 
               {project.video && (

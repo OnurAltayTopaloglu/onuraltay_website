@@ -32,7 +32,7 @@ export default function Research() {
                   >
                     {badge.variant === "venue" && <BookOpen size={12} />}
                     {badge.variant === "org" && <Building2 size={12} />}
-                    {pick(lang, badge.label, badge.labelTr)}
+                    {pick(lang, badge.label, badge.labelTr, badge.labelDe)}
                   </span>
                 ))}
               </div>
@@ -42,7 +42,7 @@ export default function Research() {
               </h3>
 
               <p className="mt-3 text-sm leading-relaxed text-muted">
-                {pick(lang, pub.description, pub.descriptionTr)}
+                {pick(lang, pub.description, pub.descriptionTr, pub.descriptionDe)}
               </p>
 
               {pub.links.length > 0 && (

@@ -2,7 +2,7 @@
 
 import { useLang, type Lang } from "@/lib/i18n";
 
-const LANGS: Lang[] = ["en", "tr"];
+const LANGS: Lang[] = ["en", "tr", "de"];
 
 export default function LanguageToggle() {
   const { lang, setLang } = useLang();

@@ -26,17 +26,17 @@ export default function Hero() {
         </h1>
 
         <p className="mt-4 text-lg font-medium text-accent-soft sm:text-xl">
-          {pick(lang, profile.title, profile.titleTr)}
+          {pick(lang, profile.title, profile.titleTr, profile.titleDe)}
         </p>
 
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
-          {pick(lang, profile.tagline, profile.taglineTr)}
+          {pick(lang, profile.tagline, profile.taglineTr, profile.taglineDe)}
         </p>
 
         <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted">
           <span className="inline-flex items-center gap-2">
             <MapPin size={15} className="text-accent" />{" "}
-            {pick(lang, profile.location, profile.locationTr)}
+            {pick(lang, profile.location, profile.locationTr, profile.locationDe)}
           </span>
           <span className="inline-flex items-center gap-2">
             <GraduationCap size={15} className="text-accent" /> {t.hero.metu}

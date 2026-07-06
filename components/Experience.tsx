@@ -4,7 +4,7 @@ import Image from "next/image";
 import Section from "./Section";
 import Reveal from "./Reveal";
 import { experiences } from "@/lib/data";
-import { useLang, useUi, pick } from "@/lib/i18n";
+import { useLang, useUi, pick, pickArr } from "@/lib/i18n";
 
 export default function Experience() {
   const { lang } = useLang();
@@ -19,7 +19,7 @@ export default function Experience() {
               <div className="sm:pt-1 sm:text-right">
                 <p className="font-mono text-xs text-accent-soft">{exp.period}</p>
                 <p className="mt-1 text-xs text-muted/70">
-                  {pick(lang, exp.location, exp.locationTr)}
+                  {pick(lang, exp.location, exp.locationTr, exp.locationDe)}
                 </p>
               </div>
 
@@ -50,7 +50,7 @@ export default function Experience() {
                 {/* Header: right padding reserves space for the logo */}
                 <div className="pr-44">
                   <h3 className="text-lg font-semibold text-heading sm:text-xl">
-                    {pick(lang, exp.role, exp.roleTr)}
+                    {pick(lang, exp.role, exp.roleTr, exp.roleDe)}
                   </h3>
                   <p className="mt-0.5 text-sm font-medium text-accent-soft">
                     {exp.orgUrl ? (
@@ -94,7 +94,7 @@ export default function Experience() {
                 )}
 
                 <ul className="mt-3 space-y-2">
-                  {(lang === "tr" && exp.pointsTr ? exp.pointsTr : exp.points).map(
+                  {pickArr(lang, exp.points, exp.pointsTr, exp.pointsDe).map(
                     (point, j) => (
                       <li
                         key={j}

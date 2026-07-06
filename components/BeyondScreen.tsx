@@ -5,19 +5,23 @@ import Section from "./Section";
 import Reveal from "./Reveal";
 import AthleticsPlayground from "./AthleticsPlayground";
 import { athletics } from "@/lib/data";
-import { useLang, useUi, pick } from "@/lib/i18n";
+import { useLang, useUi, pick, pickArr } from "@/lib/i18n";
 
 export default function BeyondScreen() {
   const { lang } = useLang();
   const t = useUi();
-  const disciplines =
-    lang === "tr" ? athletics.disciplinesTr : athletics.disciplines;
+  const disciplines = pickArr(
+    lang,
+    athletics.disciplines,
+    athletics.disciplinesTr,
+    athletics.disciplinesDe
+  );
   return (
     <Section id="beyond" index="05" title={t.sections.beyond}>
       <div className="grid gap-10 lg:grid-cols-[1.3fr_1fr] lg:items-center">
         <Reveal className="space-y-6">
           <p className="text-base leading-relaxed text-muted">
-            {pick(lang, athletics.intro, athletics.introTr)}
+            {pick(lang, athletics.intro, athletics.introTr, athletics.introDe)}
           </p>
 
           <div className="space-y-4">
@@ -36,10 +40,10 @@ export default function BeyondScreen() {
                 />
                 <div className="min-w-0">
                   <p className="text-sm font-semibold text-heading">
-                    {pick(lang, a.place, a.placeTr)}
+                    {pick(lang, a.place, a.placeTr, a.placeDe)}
                     <span className="font-normal text-accent-soft">
                       {" · "}
-                      {pick(lang, a.title, a.titleTr)}
+                      {pick(lang, a.title, a.titleTr, a.titleDe)}
                     </span>
                     <ArrowUpRight
                       size={13}
@@ -47,7 +51,7 @@ export default function BeyondScreen() {
                     />
                   </p>
                   <p className="mt-1 text-sm leading-relaxed text-muted">
-                    {pick(lang, a.detail, a.detailTr)}
+                    {pick(lang, a.detail, a.detailTr, a.detailDe)}
                   </p>
                 </div>
               </a>
