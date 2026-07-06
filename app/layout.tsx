@@ -16,8 +16,11 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+const ogTitle = `${profile.name} — ${profile.title}`;
+
 export const metadata: Metadata = {
-  title: `${profile.name} — ${profile.title}`,
+  metadataBase: new URL("https://onuraltay.dev"),
+  title: ogTitle,
   description: profile.tagline,
   keywords: [
     "Onur Altay Topaloğlu",
@@ -29,9 +32,18 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: profile.name }],
   openGraph: {
-    title: `${profile.name} — ${profile.title}`,
+    title: ogTitle,
     description: profile.tagline,
+    url: "https://onuraltay.dev",
+    siteName: profile.name,
     type: "website",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: ogTitle }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: ogTitle,
+    description: profile.tagline,
+    images: ["/og.png"],
   },
 };
 
