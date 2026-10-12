@@ -1,7 +1,11 @@
+"use client";
+
 import { Github, Linkedin, Mail, GraduationCap } from "lucide-react";
 import { profile } from "@/lib/data";
+import { useEmailHref } from "@/lib/useEmailHref";
 
 export default function Footer() {
+  const emailHref = useEmailHref();
   return (
     <footer className="border-t border-border">
       <div className="mx-auto flex max-w-4xl flex-col items-center justify-between gap-4 px-6 py-8 sm:flex-row">
@@ -18,7 +22,7 @@ export default function Footer() {
           <FooterIcon href={profile.socials.scholar} label="Google Scholar">
             <GraduationCap size={16} />
           </FooterIcon>
-          <FooterIcon href={`mailto:${profile.email}`} label="Email">
+          <FooterIcon href={emailHref} label="Email">
             <Mail size={16} />
           </FooterIcon>
         </div>

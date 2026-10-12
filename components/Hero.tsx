@@ -3,10 +3,12 @@
 import { ArrowDown, Download, Github, Linkedin, Mail, MapPin, GraduationCap } from "lucide-react";
 import { profile } from "@/lib/data";
 import { useLang, useUi, pick } from "@/lib/i18n";
+import { useEmailHref } from "@/lib/useEmailHref";
 
 export default function Hero() {
   const { lang } = useLang();
   const t = useUi();
+  const emailHref = useEmailHref();
   return (
     <section id="top" className="relative overflow-hidden">
       <div className="hero-glow absolute inset-0 -z-10" />
@@ -39,6 +41,9 @@ export default function Hero() {
             {pick(lang, profile.location, profile.locationTr, profile.locationDe)}
           </span>
           <span className="inline-flex items-center gap-2">
+            <GraduationCap size={15} className="text-accent" /> {t.hero.tum}
+          </span>
+          <span className="inline-flex items-center gap-2">
             <GraduationCap size={15} className="text-accent" /> {t.hero.metu}
           </span>
         </div>
@@ -66,7 +71,7 @@ export default function Hero() {
             <SocialIcon href={profile.socials.linkedin} label="LinkedIn">
               <Linkedin size={18} />
             </SocialIcon>
-            <SocialIcon href={`mailto:${profile.email}`} label="Email">
+            <SocialIcon href={emailHref} label="Email">
               <Mail size={18} />
             </SocialIcon>
           </div>

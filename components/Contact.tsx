@@ -3,10 +3,12 @@
 import { Mail, Github, Linkedin, GraduationCap, Download, ArrowUpRight } from "lucide-react";
 import Reveal from "./Reveal";
 import { profile } from "@/lib/data";
+import { useEmailHref } from "@/lib/useEmailHref";
 import { useUi } from "@/lib/i18n";
 
 export default function Contact() {
   const t = useUi();
+  const emailHref = useEmailHref();
   return (
     <section id="contact" className="mx-auto max-w-4xl px-6 py-20 sm:py-28">
       <Reveal className="relative overflow-hidden rounded-3xl border border-border bg-surface/40 px-6 py-14 text-center sm:px-12">
@@ -22,7 +24,7 @@ export default function Contact() {
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <a
-            href={`mailto:${profile.email}`}
+            href={emailHref}
             className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-bg transition-transform hover:scale-[1.03]"
           >
             <Mail size={16} /> {t.contact.sayHello}
@@ -38,9 +40,6 @@ export default function Contact() {
         </div>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm">
-          <ContactLink href={`mailto:${profile.email}`} icon={<Mail size={16} />}>
-            {profile.email}
-          </ContactLink>
           <ContactLink href={profile.socials.github} icon={<Github size={16} />} external>
             GitHub
           </ContactLink>

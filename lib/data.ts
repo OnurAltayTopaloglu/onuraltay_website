@@ -4,19 +4,18 @@
 export const profile = {
   name: "Onur Altay Topaloğlu",
   shortName: "Onur Altay",
-  title: "Machine Learning Engineer & AI Researcher",
-  titleTr: "Makine Öğrenmesi Mühendisi & YZ Araştırmacısı",
-  titleDe: "Machine Learning Engineer & KI-Forscher",
+  title: "Computer Vision & ML Engineer",
+  titleTr: "Bilgisayarlı Görü & ML Mühendisi",
+  titleDe: "Computer-Vision- & ML-Engineer",
   tagline:
-    "Computer Engineering graduate from METU building trustworthy, multimodal AI systems — from medical vision-language models to large-scale computer vision research.",
+    "M.Sc. Informatics student at TUM with two years of hands-on computer vision work — depth estimation, point tracking and optical flow, and large-scale evaluation of vision-language models.",
   taglineTr:
-    "ODTÜ Bilgisayar Mühendisliği mezunu; güvenilir, çok kipli yapay zekâ sistemleri geliştiriyorum — tıbbi görü-dil modellerinden büyük ölçekli bilgisayarlı görü araştırmalarına.",
+    "TUM'da Informatics yüksek lisans öğrencisiyim; iki yıllık uygulamalı bilgisayarlı görü deneyimim var — derinlik kestirimi, nokta takibi ve optik akış ile görü-dil modellerinin büyük ölçekli değerlendirmesi.",
   taglineDe:
-    "Informatik-Absolvent der METU; ich entwickle vertrauenswürdige, multimodale KI-Systeme — von medizinischen Vision-Language-Modellen bis hin zu groß angelegter Computer-Vision-Forschung.",
-  location: "Istanbul, Türkiye",
-  locationTr: "İstanbul, Türkiye",
-  locationDe: "Istanbul, Türkei",
-  email: "hello@onuraltay.dev",
+    "M.Sc.-Informatik-Student an der TUM mit zwei Jahren praktischer Computer-Vision-Erfahrung — Tiefenschätzung, Punkt-Tracking und optischer Fluss sowie groß angelegte Evaluation von Vision-Language-Modellen.",
+  location: "Munich, Germany",
+  locationTr: "Münih, Almanya",
+  locationDe: "München, Deutschland",
   cv: "/Resume.pdf",
   socials: {
     github: "https://github.com/OnurAltayTopaloglu",
@@ -28,19 +27,19 @@ export const profile = {
 
 export const about = {
   paragraphs: [
-    "I'm a Computer Engineering graduate from Middle East Technical University (METU) with a CGPA of 3.61/4.00, focused on building machine learning systems that are reliable, fair, and ready for the real world.",
-    "My work spans applied research and shipped products: I design evaluation frameworks and retrieval systems, train and benchmark deep learning models, and turn research ideas into working pipelines — including ÜSTAT, an AI-native workspace I'm building for lawyers. I care most about the parts of ML that decide whether a system can actually be trusted in production — robustness, fairness, and rigorous evaluation.",
-    "Currently I'm a co-first author on a CVPR 2026 workshop paper and an undergraduate researcher in a Harvard–MIT × METU collaboration on trustworthy multimodal AI for healthcare.",
+    "I'm an M.Sc. Informatics student at TUM and a Computer Engineering graduate of Middle East Technical University (METU, CGPA 3.61/4.00), with two years of hands-on computer vision work: depth estimation benchmarks, point tracking and optical flow in video, and large-scale evaluation of vision-language models on GPU clusters.",
+    "My work spans applied research and shipped products: I design evaluation frameworks and retrieval systems, train and benchmark deep learning models, and turn research ideas into working pipelines — including LawPal, an AI-native workspace I'm building for lawyers. I care most about the parts of ML that decide whether a system can actually be trusted in production — robustness, fairness, and rigorous evaluation.",
+    "I'm a co-first author of LuMon at the CVPR 2026 AI4Space workshop, and I ran the fairness study of vision-language models in a Harvard–MIT × METU collaboration on trustworthy multimodal AI.",
   ],
   paragraphsTr: [
-    "Orta Doğu Teknik Üniversitesi (ODTÜ) Bilgisayar Mühendisliği mezunuyum (GNO 3.61/4.00); güvenilir, adil ve gerçek dünyaya hazır makine öğrenmesi sistemleri kurmaya odaklanıyorum.",
-    "Çalışmalarım hem uygulamalı araştırmayı hem de yayımlanan ürünleri kapsıyor: değerlendirme çerçeveleri ve erişim (retrieval) sistemleri tasarlıyor, derin öğrenme modellerini eğitip kıyaslıyor ve araştırma fikirlerini çalışan sistemlere dönüştürüyorum — avukatlar için geliştirdiğim yapay zekâ tabanlı çalışma alanı ÜSTAT da bunlardan biri. Bir sistemin üretimde gerçekten güvenilir olup olmadığını belirleyen kısımlar en çok ilgimi çekenler: dayanıklılık, adalet ve titiz değerlendirme.",
-    "Şu anda bir CVPR 2026 çalıştay makalesinde eş-ilk yazarım ve sağlıkta güvenilir çok kipli yapay zekâ üzerine bir Harvard–MIT × ODTÜ iş birliğinde lisans araştırmacısıyım.",
+    "TUM'da Informatics yüksek lisans öğrencisiyim ve Orta Doğu Teknik Üniversitesi (ODTÜ) Bilgisayar Mühendisliği mezunuyum (GNO 3.61/4.00); iki yıllık uygulamalı bilgisayarlı görü deneyimim var: derinlik kestirimi kıyaslamaları, videoda nokta takibi ve optik akış, GPU kümelerinde görü-dil modellerinin büyük ölçekli değerlendirmesi.",
+    "Çalışmalarım hem uygulamalı araştırmayı hem de yayımlanan ürünleri kapsıyor: değerlendirme çerçeveleri ve erişim (retrieval) sistemleri tasarlıyor, derin öğrenme modellerini eğitip kıyaslıyor ve araştırma fikirlerini çalışan sistemlere dönüştürüyorum — avukatlar için geliştirdiğim yapay zekâ tabanlı çalışma alanı LawPal da bunlardan biri. Bir sistemin üretimde gerçekten güvenilir olup olmadığını belirleyen kısımlar en çok ilgimi çekenler: dayanıklılık, adalet ve titiz değerlendirme.",
+    "CVPR 2026 AI4Space çalıştayında LuMon makalesinin eş-ilk yazarıyım; ayrıca güvenilir çok kipli yapay zekâ üzerine bir Harvard–MIT × ODTÜ iş birliğinde görü-dil modellerinin adalet çalışmasını yürüttüm.",
   ],
   paragraphsDe: [
-    "Ich bin Informatik-Absolvent der Middle East Technical University (METU) mit einem Notendurchschnitt von 3,61/4,00 und konzentriere mich darauf, Machine-Learning-Systeme zu entwickeln, die zuverlässig, fair und praxistauglich sind.",
-    "Meine Arbeit umfasst sowohl angewandte Forschung als auch ausgelieferte Produkte: Ich entwerfe Evaluations-Frameworks und Retrieval-Systeme, trainiere und benchmarke Deep-Learning-Modelle und verwandle Forschungsideen in funktionierende Pipelines — darunter ÜSTAT, ein KI-basierter Arbeitsbereich, den ich für Anwälte entwickle. Am meisten interessieren mich die Teile des ML, die darüber entscheiden, ob einem System in der Produktion tatsächlich vertraut werden kann — Robustheit, Fairness und rigorose Evaluation.",
-    "Derzeit bin ich Co-Erstautor eines CVPR-2026-Workshop-Papers und studentischer Forscher in einer Harvard–MIT × METU-Kooperation zu vertrauenswürdiger multimodaler KI im Gesundheitswesen.",
+    "Ich bin M.Sc.-Informatik-Student an der TUM und Absolvent der Technischen Informatik an der Middle East Technical University (METU, Notendurchschnitt 3,61/4,00) mit zwei Jahren praktischer Computer-Vision-Erfahrung: Benchmarks zur Tiefenschätzung, Punkt-Tracking und optischer Fluss in Videos sowie groß angelegte Evaluation von Vision-Language-Modellen auf GPU-Clustern.",
+    "Meine Arbeit umfasst sowohl angewandte Forschung als auch ausgelieferte Produkte: Ich entwerfe Evaluations-Frameworks und Retrieval-Systeme, trainiere und benchmarke Deep-Learning-Modelle und verwandle Forschungsideen in funktionierende Pipelines — darunter LawPal, ein KI-basierter Arbeitsbereich, den ich für Anwälte entwickle. Am meisten interessieren mich die Teile des ML, die darüber entscheiden, ob einem System in der Produktion tatsächlich vertraut werden kann — Robustheit, Fairness und rigorose Evaluation.",
+    "Ich bin Co-Erstautor von LuMon beim CVPR-2026-AI4Space-Workshop und habe in einer Harvard–MIT × METU-Kooperation zu vertrauenswürdiger multimodaler KI die Fairness-Studie zu Vision-Language-Modellen durchgeführt.",
   ],
 };
 
@@ -145,7 +144,7 @@ export const experiences: Experience[] = [
     location: "Remote",
     locationTr: "Uzaktan",
     locationDe: "Remote",
-    period: "Sep 2025 – Present",
+    period: "Sep 2025 – Jul 2026",
     advisors: [
       {
         name: "Dr. Jiaee Cheong",
@@ -324,17 +323,17 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "ÜSTAT",
+    title: "LawPal",
     subtitle: "AI-native workspace for lawyers",
     subtitleTr: "Avukatlar için yapay zekâ tabanlı çalışma alanı",
     subtitleDe: "KI-basierter Arbeitsbereich für Anwälte",
-    period: "Feb 2026 – Present",
+    period: "Feb 2026 – Aug 2026",
     description:
-      "From filing a case to the appeal deadline, ÜSTAT brings a lawyer's entire day into a single workspace — cases, clients, documents, and deadline tracking, all in one source of truth, paired with a document-aware AI assistant that understands the files it works with.",
+      "From filing a case to the appeal deadline, LawPal brings a lawyer's entire day into a single workspace — cases, clients, documents, and deadline tracking, all in one source of truth, paired with a document-aware AI assistant that understands the files it works with.",
     descriptionTr:
-      "Bir davanın açılışından temyiz süresine kadar, ÜSTAT bir avukatın tüm gününü tek bir çalışma alanında toplar — davalar, müvekkiller, belgeler ve süre takibi, hepsi tek doğru kaynakta; üzerinde çalıştığı dosyaları anlayan, belge farkındalıklı bir yapay zekâ asistanıyla birlikte.",
+      "Bir davanın açılışından temyiz süresine kadar, LawPal bir avukatın tüm gününü tek bir çalışma alanında toplar — davalar, müvekkiller, belgeler ve süre takibi, hepsi tek doğru kaynakta; üzerinde çalıştığı dosyaları anlayan, belge farkındalıklı bir yapay zekâ asistanıyla birlikte.",
     descriptionDe:
-      "Von der Klageeinreichung bis zur Berufungsfrist bündelt ÜSTAT den gesamten Arbeitstag eines Anwalts in einem einzigen Arbeitsbereich — Fälle, Mandanten, Dokumente und Fristenkontrolle, alles an einer verlässlichen Quelle, gepaart mit einem dokumentenbewussten KI-Assistenten, der die bearbeiteten Dateien versteht.",
+      "Von der Klageeinreichung bis zur Berufungsfrist bündelt LawPal den gesamten Arbeitstag eines Anwalts in einem einzigen Arbeitsbereich — Fälle, Mandanten, Dokumente und Fristenkontrolle, alles an einer verlässlichen Quelle, gepaart mit einem dokumentenbewussten KI-Assistenten, der die bearbeiteten Dateien versteht.",
     tags: ["Legal Tech", "AI Assistant", "RAG", "Document Intelligence"],
     links: [],
     status: "In development · Private",
@@ -438,6 +437,18 @@ export type EduNode =
     };
 
 export const educationTimeline: EduNode[] = [
+  {
+    type: "school",
+    school: "Technical University of Munich (TUM)",
+    schoolTr: "Münih Teknik Üniversitesi (TUM)",
+    schoolDe: "Technische Universität München (TUM)",
+    degree: "M.Sc. in Informatics",
+    degreeTr: "Bilişim (Informatics), Yüksek Lisans",
+    degreeDe: "M.Sc. Informatik",
+    period: "2026 – Present",
+    logo: "/logos/tum_logo.svg",
+    url: "https://www.tum.de/en/",
+  },
   {
     type: "school",
     school: "Middle East Technical University (METU)",
