@@ -4,9 +4,9 @@
 export const profile = {
   name: "Onur Altay Topaloğlu",
   shortName: "Onur Altay",
-  title: "Computer Vision & ML Engineer",
-  titleTr: "Bilgisayarlı Görü & ML Mühendisi",
-  titleDe: "Computer-Vision- & ML-Engineer",
+  title: "Machine Learning & AI Engineer",
+  titleTr: "Makine Öğrenmesi & Yapay Zekâ Mühendisi",
+  titleDe: "Machine-Learning- & KI-Engineer",
   tagline:
     "M.Sc. Informatics student at TUM with two years of hands-on computer vision work — depth estimation, point tracking and optical flow, and large-scale evaluation of vision-language models.",
   taglineTr:
