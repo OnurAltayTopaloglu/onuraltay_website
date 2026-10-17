@@ -8,11 +8,11 @@ export const profile = {
   titleTr: "Makine Öğrenmesi & Yapay Zekâ Mühendisi",
   titleDe: "Machine-Learning- & KI-Engineer",
   tagline:
-    "M.Sc. Informatics student at TUM with two years of hands-on computer vision work — depth estimation, point tracking and optical flow, and large-scale evaluation of vision-language models.",
+    "M.Sc. Informatics student at TUM working across computer vision research and applied AI engineering — a CVPR 2026 workshop paper on lunar depth estimation, fairness evaluation of vision-language models, and LLM-powered products shipped end to end.",
   taglineTr:
-    "TUM'da Informatics yüksek lisans öğrencisiyim; iki yıllık uygulamalı bilgisayarlı görü deneyimim var — derinlik kestirimi, nokta takibi ve optik akış ile görü-dil modellerinin büyük ölçekli değerlendirmesi.",
+    "TUM'da Informatics yüksek lisans öğrencisiyim; bilgisayarlı görü araştırması ile uygulamalı yapay zekâ mühendisliği arasında çalışıyorum — ay yüzeyi derinlik kestirimi üzerine bir CVPR 2026 workshop makalesi, görü-dil modellerinin adalet değerlendirmesi ve uçtan uca geliştirdiğim LLM tabanlı ürünler.",
   taglineDe:
-    "M.Sc.-Informatik-Student an der TUM mit zwei Jahren praktischer Computer-Vision-Erfahrung — Tiefenschätzung, Punkt-Tracking und optischer Fluss sowie groß angelegte Evaluation von Vision-Language-Modellen.",
+    "M.Sc.-Informatik-Student an der TUM zwischen Computer-Vision-Forschung und angewandtem KI-Engineering — ein CVPR-2026-Workshop-Paper zur Tiefenschätzung auf dem Mond, Fairness-Evaluation von Vision-Language-Modellen und LLM-basierte Produkte, die ich Ende-zu-Ende umgesetzt habe.",
   location: "Munich, Germany",
   locationTr: "Münih, Almanya",
   locationDe: "München, Deutschland",
@@ -27,17 +27,17 @@ export const profile = {
 
 export const about = {
   paragraphs: [
-    "I'm an M.Sc. Informatics student at TUM and a Computer Engineering graduate of Middle East Technical University (METU, CGPA 3.61/4.00), with two years of hands-on computer vision work: depth estimation benchmarks, point tracking and optical flow in video, and large-scale evaluation of vision-language models on GPU clusters.",
+    "I'm an M.Sc. Informatics student at TUM and a Computer Engineering graduate of Middle East Technical University (METU, CGPA 3.61/4.00), with two years of research across three labs (depth estimation, point tracking and optical flow, fairness evaluation of vision-language models on GPU clusters) and hands-on experience building LLM-powered products end to end.",
     "My work spans applied research and shipped products: I design evaluation frameworks and retrieval systems, train and benchmark deep learning models, and turn research ideas into working pipelines — including LawPal, an AI-native workspace I'm building for lawyers. I care most about the parts of ML that decide whether a system can actually be trusted in production — robustness, fairness, and rigorous evaluation.",
     "I'm a co-first author of LuMon at the CVPR 2026 AI4Space workshop, and I ran the fairness study of vision-language models in a Harvard–MIT × METU collaboration on trustworthy multimodal AI.",
   ],
   paragraphsTr: [
-    "TUM'da Informatics yüksek lisans öğrencisiyim ve Orta Doğu Teknik Üniversitesi (ODTÜ) Bilgisayar Mühendisliği mezunuyum (GNO 3.61/4.00); iki yıllık uygulamalı bilgisayarlı görü deneyimim var: derinlik kestirimi kıyaslamaları, videoda nokta takibi ve optik akış, GPU kümelerinde görü-dil modellerinin büyük ölçekli değerlendirmesi.",
+    "TUM'da Informatics yüksek lisans öğrencisiyim ve Orta Doğu Teknik Üniversitesi (ODTÜ) Bilgisayar Mühendisliği mezunuyum (GNO 3.61/4.00); üç laboratuvarda iki yıllık araştırma deneyimim (derinlik kestirimi, nokta takibi ve optik akış, GPU kümelerinde görü-dil modellerinin adalet değerlendirmesi) ve LLM tabanlı ürünleri uçtan uca geliştirme tecrübem var.",
     "Çalışmalarım hem uygulamalı araştırmayı hem de yayımlanan ürünleri kapsıyor: değerlendirme çerçeveleri ve erişim (retrieval) sistemleri tasarlıyor, derin öğrenme modellerini eğitip kıyaslıyor ve araştırma fikirlerini çalışan sistemlere dönüştürüyorum — avukatlar için geliştirdiğim yapay zekâ tabanlı çalışma alanı LawPal da bunlardan biri. Bir sistemin üretimde gerçekten güvenilir olup olmadığını belirleyen kısımlar en çok ilgimi çekenler: dayanıklılık, adalet ve titiz değerlendirme.",
     "CVPR 2026 AI4Space çalıştayında LuMon makalesinin eş-ilk yazarıyım; ayrıca güvenilir çok kipli yapay zekâ üzerine bir Harvard–MIT × ODTÜ iş birliğinde görü-dil modellerinin adalet çalışmasını yürüttüm.",
   ],
   paragraphsDe: [
-    "Ich bin M.Sc.-Informatik-Student an der TUM und Absolvent der Technischen Informatik an der Middle East Technical University (METU, Notendurchschnitt 3,61/4,00) mit zwei Jahren praktischer Computer-Vision-Erfahrung: Benchmarks zur Tiefenschätzung, Punkt-Tracking und optischer Fluss in Videos sowie groß angelegte Evaluation von Vision-Language-Modellen auf GPU-Clustern.",
+    "Ich bin M.Sc.-Informatik-Student an der TUM und Absolvent der Technischen Informatik an der Middle East Technical University (METU, Notendurchschnitt 3,61/4,00) mit zwei Jahren Forschung in drei Laboren (Tiefenschätzung, Punkt-Tracking und optischer Fluss, Fairness-Evaluation von Vision-Language-Modellen auf GPU-Clustern) und praktischer Erfahrung im Ende-zu-Ende-Bau LLM-basierter Produkte.",
     "Meine Arbeit umfasst sowohl angewandte Forschung als auch ausgelieferte Produkte: Ich entwerfe Evaluations-Frameworks und Retrieval-Systeme, trainiere und benchmarke Deep-Learning-Modelle und verwandle Forschungsideen in funktionierende Pipelines — darunter LawPal, ein KI-basierter Arbeitsbereich, den ich für Anwälte entwickle. Am meisten interessieren mich die Teile des ML, die darüber entscheiden, ob einem System in der Produktion tatsächlich vertraut werden kann — Robustheit, Fairness und rigorose Evaluation.",
     "Ich bin Co-Erstautor von LuMon beim CVPR-2026-AI4Space-Workshop und habe in einer Harvard–MIT × METU-Kooperation zu vertrauenswürdiger multimodaler KI die Fairness-Studie zu Vision-Language-Modellen durchgeführt.",
   ],
